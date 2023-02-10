@@ -44,7 +44,7 @@
         combo_shift_alt_f {
             timeout-ms = <50>;
             key-positions = <11 12 13>;
-            bindings = <&kp LSHIFT(LEFT_ALT(F))>;
+            bindings = <&kp LS(LA(F))>;
         };
     };
 
