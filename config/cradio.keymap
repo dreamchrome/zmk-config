@@ -42,7 +42,7 @@
             key-positions = <0 1 2 3 6 7 8 9>;
             binding = <&bootloader>;
         };
-    }
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
