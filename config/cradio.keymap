@@ -34,13 +34,13 @@
         combo_bootloader {
             timeout-ms = <50>;
             key-positions = <0 1 2 3 4>;
-            binding = <&bootloader>;
+            bindings = <&bootloader>;
         };
 
         combo_bootloader_both {
             timeout-ms = <70>;
             key-positions = <0 1 2 3 6 7 8 9>;
-            binding = <&bootloader>;
+            bindings = <&bootloader>;
         };
     };
 
