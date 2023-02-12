@@ -46,6 +46,26 @@
             key-positions = <11 12 13>;
             bindings = <&kp LS(LA(F))>;
         };
+        combo_delete_right {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp LS(LA(F))>;
+        };
+        combo_delete_left {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp LS(LA(F))>;
+        };
+        combo_backspace_right {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp LS(LA(F))>;
+        };
+        combo_backspace_left {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp LS(LA(F))>;
+        };
     };
 
     conditional_layers {
