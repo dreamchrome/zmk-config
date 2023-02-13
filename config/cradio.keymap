@@ -66,11 +66,20 @@
             key-positions = <12 13>;
             bindings = <&kp DEL>;
         };
-        
         combo_rightspaces {
             timeout-ms = <150>;
             key-positions = <32 33>;
             bindings = <&kp SPACE>;
+        };
+        combo_controllayerl {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&mo 4>;
+        };
+        combo_controllayerr {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&mo 4>;
         };
     };
 
@@ -142,6 +151,23 @@
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        controls_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │          │
+            &reset     &trans     &trans   &kp C_VOL_UP  &bt BT_SEL 0   &trans     &kp LA(LG(PG_UP))   &trans     &trans      &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │          │
+          &bootloader  &trans     &trans   &kp C_VOL_DN  &bt BT_SEL 1   &trans     &kp LA(LG(PG_DN))    &trans     &trans    &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │PROFILE 2 │   │          │          │          │          │          │
+           &bt BT_CLR   &trans     &trans  &trans      &bt BT_SEL 2     &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans        &kp C_VOL_DN  &kp C_VOL_UP
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
