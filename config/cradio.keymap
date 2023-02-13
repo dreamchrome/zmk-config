@@ -46,29 +46,29 @@
             key-positions = <11 12 13>;
             bindings = <&kp LS(LA(F))>;
         };
-        combo_delete_right {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp DEL>;
-        };
-        combo_delete_left {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp DEL>;
-        };
         combo_backspace_right {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
+            timeout-ms = <40>;
+            key-positions = <17 18>;
             bindings = <&kp BACKSPACE>;
+        };
+        combo_delete_right {
+            timeout-ms = <40>;
+            key-positions = <16 17>;
+            bindings = <&kp DEL>;
         };
         combo_backspace_left {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
+            timeout-ms = <40>;
+            key-positions = <11 12>;
             bindings = <&kp BACKSPACE>;
+        };
+        combo_delete_left {
+            timeout-ms = <40>;
+            key-positions = <12 13>;
+            bindings = <&kp DEL>;
         };
         
         combo_rightspaces {
-            timeout-ms = <90>;
+            timeout-ms = <150>;
             key-positions = <32 33>;
             bindings = <&kp SPACE>;
         };
@@ -104,11 +104,11 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp INS    &kp N7     &kp N8     &kp N9     &trans         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
+            &kp INS    &kp UNDER    &kp LBRC   &kp RBRC   &trans         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp F8     &kp F4    &kp F5      &kp F6     &kp SEMI
+            &kp BSLH    &kp PIPE    &kp LPAR   &kp RPAR    &trans         &kp F8     &kp F4    &kp F5      &kp F6     &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LSHFT  &kp N1     &kp N2     &kp N3     &kp N0          &kp F7     &kp F1    &kp F2      &kp F3     &kp ENTER
+           &kp LSHFT  &kp N1      &kp LBRC     &kp RBRC   &trans          &kp F7     &kp F1    &kp F2      &kp F3     &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
