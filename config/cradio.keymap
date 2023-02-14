@@ -58,7 +58,7 @@
         };
         combo_delete_right {
             timeout-ms = <40>;
-            key-positions = <16 17>;
+            key-positions = <17 18 19>;
             bindings = <&kp DEL>;
         };
         combo_backspace_left {
@@ -68,7 +68,7 @@
         };
         combo_delete_left {
             timeout-ms = <40>;
-            key-positions = <12 13>;
+            key-positions = <10 11 12>;
             bindings = <&kp DEL>;
         };
         combo_rightspaces {
