@@ -32,20 +32,20 @@
     combos {
         compatible = "zmk,combos";
         combo_esc {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-        combo_bootloader {
-            timeout-ms = <50>;
-            key-positions = <0 1 2 3 4>;
-            bindings = <&bootloader>;
-        };
-        combo_bootloader_both {
-            timeout-ms = <70>;
-            key-positions = <0 1 2 3 6 7 8 9>;
-            bindings = <&bootloader>;
-        };
+        // combo_bootloader {
+        //     timeout-ms = <50>;
+        //     key-positions = <0 1 2 3 4>;
+        //     bindings = <&bootloader>;
+        // };
+        // combo_bootloader_both {
+        //     timeout-ms = <70>;
+        //     key-positions = <0 1 2 3 6 7 8 9>;
+        //     bindings = <&bootloader>;
+        // };
         combo_shift_alt_f {
             timeout-ms = <50>;
             key-positions = <11 12 13>;
@@ -78,12 +78,12 @@
         };
         combo_controllayerl {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <0 1 2>;
             bindings = <&mo 4>;
         };
         combo_controllayerr {
             timeout-ms = <50>;
-            key-positions = <7 8>;
+            key-positions = <7 8 9>;
             bindings = <&mo 4>;
         };
     };
@@ -110,7 +110,7 @@
         //│  Z       │  X       │    C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LGUI   &lt 2 ENTER    &lt 1 SPACE  &kp RGUI
+                                            &kp LGUI   &lt 2 ENTER     &lt 1 SPACE   &kp RGUI    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
