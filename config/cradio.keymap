@@ -164,15 +164,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │          │
-            &reset     &trans  &trans &kp LA(LG(PG_UP))  &bt BT_SEL 0   &reset &kp LA(LG(PG_UP))   &trans     &trans      &trans
+            &reset   &trans      &trans    &kp LA(LG(PG_UP))  &bt BT_SEL 0   &reset &kp LA(LG(PG_UP))  &trans     &trans      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │          │
-          &bootloader  &out OUT_BLE  &trans &kp LA(LG(PG_DN))  &bt BT_SEL 1   &trans     &kp LA(LG(PG_DN))    &trans     &trans    &bootloader
+          &bootloader &out OUT_BLE &trans &kp LA(LG(PG_DN))  &bt BT_SEL 1   &trans   &kp LA(LG(PG_DN))  &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │PROFILE 2 │   │          │          │          │          │          │
-           &bt BT_CLR  &out OUT_USB     &trans  &trans      &bt BT_SEL 2     &trans     &trans     &trans     &trans     &trans
+           &bt BT_CLR  &out OUT_USB  &trans  &trans      &bt BT_SEL 2     &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &kp C_VOL_DN  &kp C_VOL_UP       &kp C_VOL_DN  &kp C_VOL_UP
+                                        &kp C_VOL_DN  &kp C_VOL_UP    &kp C_VOL_DN  &kp C_VOL_UP
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
