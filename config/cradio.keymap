@@ -58,7 +58,7 @@
             bindings = <&kp BACKSPACE>;
         };
         combo_delete_right {
-            timeout-ms = <40>;
+            timeout-ms = <80>;
             key-positions = <17 18 19>;
             bindings = <&kp DEL>;
         };
@@ -68,7 +68,7 @@
             bindings = <&kp BACKSPACE>;
         };
         combo_delete_left {
-            timeout-ms = <40>;
+            timeout-ms = <80>;
             key-positions = <10 11 12>;
             bindings = <&kp DEL>;
         };
@@ -78,14 +78,49 @@
             bindings = <&kp SPACE>;
         };
         combo_controllayerl {
-            timeout-ms = <100>;
+            timeout-ms = <120>;
             key-positions = <0 1 2>;
             bindings = <&mo 4>;
         };
         combo_controllayerr {
-            timeout-ms = <100>;
+            timeout-ms = <120>;
             key-positions = <7 8 9>;
             bindings = <&mo 4>;
+        };
+        combo_leftcontrol {
+            timeout-ms = <90>;
+            key-positions = <20 21 22>;
+            bindings = <&kp LCTRL>;
+        };
+        combo_rightcontrol {
+            timeout-ms = <90>;
+            key-positions = <27 28 29>;
+            bindings = <&kp RCTRL>;
+        };
+        combo_leftalt {
+            timeout-ms = <90>;
+            key-positions = <22 23 24>;
+            bindings = <&kp LALT>;
+        };
+        combo_rightalt {
+            timeout-ms = <90>;
+            key-positions = <25 26 27>;
+            bindings = <&kp RALT>;
+        };
+        cut_right {
+            timeout-ms = <110>;
+            key-positions = <6 7 8>;
+            bindings = <&kp LG(X)>;
+        };
+        copy_right {
+            timeout-ms = <110>;
+            key-positions = <16 17 18>;
+            bindings = <&kp LG(C)>;
+        };
+        paste_right {
+            timeout-ms = <110>;
+            key-positions =<26 27 28>;
+            bindings = <&kp LG(V)>;
         };
     };
 
@@ -119,11 +154,11 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp INS    &kp UNDER    &kp LBRC   &kp RBRC   &trans         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
+            &kp GRAV   &kp UNDER   &kp LBRC   &kp RBRC   &trans         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp BSLH    &kp PIPE    &kp LPAR   &kp RPAR    &trans         &kp F8     &kp F4    &kp F5      &kp F6     &kp SEMI
+            &kp CAPS    &kp PIPE   &kp LPAR   &kp RPAR    &trans         &kp F8     &kp F4    &kp F5      &kp F6     &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LSHFT  &kp N1      &kp LBRC     &kp RBRC   &trans          &kp F7     &kp F1    &kp F2      &kp F3     &kp ENTER
+           &kp LSHFT  &kp BSLH     &kp LBKT   &kp RBKT   &trans          &kp F7     &kp F1    &kp F2      &kp F3     &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -165,13 +200,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │          │
-            &reset   &trans      &trans    &kp LA(LG(PG_UP))  &bt BT_SEL 0   &reset &kp LA(LG(PG_UP))  &trans     &trans      &trans
+            &reset   &trans      &trans    &kp LA(LG(PG_UP))  &bt BT_SEL 0   &kp C_NEXT &kp LA(LG(PG_UP))  &trans     &trans      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │          │
-          &bootloader &out OUT_BLE &trans &kp LA(LG(PG_DN))  &bt BT_SEL 1   &trans   &kp LA(LG(PG_DN))  &trans     &trans    &bootloader
+          &bootloader &out OUT_BLE &trans &kp LA(LG(PG_DN))  &bt BT_SEL 1   &kp C_PREV   &kp LA(LG(PG_DN))  &trans     &reset    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │PROFILE 2 │   │          │          │          │          │          │
-           &bt BT_CLR  &out OUT_USB  &trans  &trans      &bt BT_SEL 2     &trans     &trans     &trans     &trans     &trans
+           &bt BT_CLR  &out OUT_USB  &trans  &trans      &bt BT_SEL 2     &kp C_PP     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                         &kp C_VOL_DN  &kp C_VOL_UP    &kp C_VOL_DN  &kp C_VOL_UP
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
