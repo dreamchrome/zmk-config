@@ -77,13 +77,13 @@
             key-positions = <32 33>;
             bindings = <&kp SPACE>;
         };
-        combo_controllayerl {
-            timeout-ms = <120>;
+        combo_controllayerleft {
+            timeout-ms = <220>;
             key-positions = <0 1 2>;
             bindings = <&mo 4>;
         };
-        combo_controllayerr {
-            timeout-ms = <120>;
+        combo_controllayerright {
+            timeout-ms = <220>;
             key-positions = <7 8 9>;
             bindings = <&mo 4>;
         };
