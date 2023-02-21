@@ -23,11 +23,14 @@
         //     global-quick-tap;
         //     bindings = <&kp>, <&kp>;
         // };
-        // lt: layer_tap {
-        //     label = "layer_tap";
-        //     flavor = "hold-preferred";
-        //     tapping-term-ms = <150>;
-        // };
+        lt: layer_tap {
+            label = "layer_tap";
+            flavor = "hold-preferred";
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <230>;
+            quick-tap-ms = <100>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     combos {
