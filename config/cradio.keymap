@@ -93,12 +93,14 @@
         };
         combo_controllayerleft {
             timeout-ms = <220>;
-            key-positions = <0 1 2>;
+            slow-release;
+            key-positions = <0 1 2 3>;
             bindings = <&mo 4>;
         };
         combo_controllayerright {
             timeout-ms = <220>;
-            key-positions = <7 8 9>;
+            key-positions = <6 7 8 9>;
+            slow-release;
             bindings = <&mo 4>;
         };
         combo_leftcontrol {
