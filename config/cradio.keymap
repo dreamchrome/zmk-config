@@ -11,6 +11,17 @@
 //#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 //#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
+
+&lt {
+    flavor = "hold-preferred";
+    tapping-term-ms = <220>;
+    quick-tap-ms = <100>;
+};
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <90>;
+};
+
 / {
     behaviors {
         // ht: hold_tap {
@@ -31,15 +42,6 @@
         //     quick-tap-ms = <100>;
         //     bindings = <&kp>, <&kp>;
         // };
-        &lt {
-            tapping-term-ms = <220>;
-            flavor = "hold-preferred";
-            quick-tap-ms = <100>;
-        };
-        &mt {
-            flavor = "tap-preferred";
-            tapping-term-ms = <90>;
-        };
     };
 
     combos {
