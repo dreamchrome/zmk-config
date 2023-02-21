@@ -23,13 +23,22 @@
         //     global-quick-tap;
         //     bindings = <&kp>, <&kp>;
         // };
-        lt: layer_tap {
-            label = "layer_tap";
+        // lt: layer_tap {
+        //     label = "layer_tap";
+        //     flavor = "hold-preferred";
+        //     compatible = "zmk,behavior-hold-tap";
+        //     tapping-term-ms = <230>;
+        //     quick-tap-ms = <100>;
+        //     bindings = <&kp>, <&kp>;
+        // };
+        &lt {
+            tapping-term-ms = <220>;
             flavor = "hold-preferred";
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <230>;
             quick-tap-ms = <100>;
-            bindings = <&kp>, <&kp>;
+        };
+        &mt {
+            flavor = "tap-preferred";
+            tapping-term-ms = <90>;
         };
     };
 
