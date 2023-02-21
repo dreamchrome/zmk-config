@@ -17,10 +17,10 @@
     tapping-term-ms = <300>;
     quick-tap-ms = <290>;
 };
-&mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <180>;
-};
+// &mt {
+//     flavor = "tap-preferred";
+//     tapping-term-ms = <180>;
+// };
 
 / {
     behaviors {
