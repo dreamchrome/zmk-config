@@ -65,7 +65,7 @@
         // Trying out this alternative enter
         combo_enter_right {
             timeout-ms = <60>;
-            key-positions = <17 18>;
+            key-positions = <16 17 18>;
             bindings = <&kp ENTER>;
             layers = <0>;
         };
@@ -80,13 +80,13 @@
         // Backspace and delete
         combo_backspace_right {
             timeout-ms = <40>;
-            key-positions = <7 8>;
+            key-positions = <6 7 8>;
             bindings = <&kp BACKSPACE>;
             layers = <0>;
         };
         combo_delete_right {
             timeout-ms = <80>;
-            key-positions = <8 9>;
+            key-positions = <7 8 9>;
             bindings = <&kp DEL>;
             layers = <0>;
         };
@@ -191,7 +191,7 @@
         //│  Z       │  X       │    C     │  V       │    B     │   │    N       │  M       │ , <      │ . >    │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LGUI   &lt 2 ENTER     &lt 1 SPACE   &kp RGUI    
+                                            &kp LGUI   &lt 2 TAB     &lt 1 SPACE   &kp RGUI    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
