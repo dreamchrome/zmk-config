@@ -61,51 +61,65 @@
         //     key-positions = <0 1 2 3 6 7 8 9>;
         //     bindings = <&bootloader>;
         // };
+
+        // Trying out this alternative enter
+        combo_enter_right {
+            timeout-ms = <60>;
+            key-positions = <17 18>;
+            bindings = <&kp ENTER>;
+            layers = <0>;
+        };
+
         // Used for doc formatting in VS Code
         combo_shift_alt_f {
             timeout-ms = <50>;
             key-positions = <11 12 13>;
             bindings = <&kp LS(LA(F))>;
+            layers = <0>;
         };
         // Backspace and delete
         combo_backspace_right {
             timeout-ms = <40>;
-            key-positions = <17 18>;
+            key-positions = <7 8>;
             bindings = <&kp BACKSPACE>;
+            layers = <0>;
         };
         combo_delete_right {
             timeout-ms = <80>;
-            key-positions = <17 18 19>;
+            key-positions = <8 9>;
             bindings = <&kp DEL>;
+            layers = <0>;
         };
-        combo_backspace_left {
-            timeout-ms = <40>;
-            key-positions = <11 12>;
-            bindings = <&kp BACKSPACE>;
-        };
-        combo_delete_left {
-            timeout-ms = <80>;
-            key-positions = <10 11 12>;
-            bindings = <&kp DEL>;
-        };
+        // combo_backspace_left {
+        //     timeout-ms = <40>;
+        //     key-positions = <11 12>;
+        //     bindings = <&kp BACKSPACE>;
+        // };
+        // combo_delete_left {
+        //     timeout-ms = <80>;
+        //     key-positions = <10 11 12>;
+        //     bindings = <&kp DEL>;
+        // };
         // To fix accidental two key preseses with right thumb
-        combo_rightspaces {
-            timeout-ms = <150>;
-            key-positions = <32 33>;
-            bindings = <&kp SPACE>;
-        };
+        // combo_rightspaces {
+        //     timeout-ms = <110>;
+        //     key-positions = <32 33>;
+        //     bindings = <&kp SPACE>;
+        // };
         // The control layers
         combo_controllayerleft {
             timeout-ms = <220>;
             slow-release;
             key-positions = <0 1 2 3>;
             bindings = <&mo 3>;
+            layers = <0>;
         };
         combo_controllayerright {
             timeout-ms = <220>;
             key-positions = <6 7 8 9>;
             slow-release;
             bindings = <&mo 3>;
+            layers = <0>;
         };
         // Alt and Ctrl
         combo_leftcontrol {
@@ -114,37 +128,44 @@
             // Doing slow release here only for the left hand so ctrl-c will be easy
             slow-release;
             bindings = <&kp LCTRL>;
+            layers = <0>;
         };
         combo_rightcontrol {
             timeout-ms = <90>;
             key-positions = <27 28 29>;
             bindings = <&kp RCTRL>;
+            layers = <0>;
         };
         combo_leftalt {
             timeout-ms = <90>;
             key-positions = <22 23 24>;
             bindings = <&kp LALT>;
+            layers = <0>;
         };
         combo_rightalt {
             timeout-ms = <90>;
             key-positions = <25 26 27>;
             bindings = <&kp RALT>;
+            layers = <0>;
         };
         // Clipboard with right hand
         cut_right {
             timeout-ms = <110>;
             key-positions = <15 16 17 18>;
             bindings = <&kp LG(X)>;
+            layers = <0>;
         };
         copy_right {
             timeout-ms = <110>;
             key-positions = <16 17 18 19>;
             bindings = <&kp LG(C)>;
+            layers = <0>;
         };
         paste_right {
             timeout-ms = <110>;
             key-positions =<26 27 28 29>;
             bindings = <&kp LG(V)>;
+            layers = <0>;
         };
     };
 
@@ -180,9 +201,9 @@
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             &kp GRAV   &kp UNDER   &kp LBRC   &kp RBRC   &kp TAB         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp CAPS    &kp PIPE   &kp LPAR   &kp RPAR    &trans         &kp F8     &kp F4    &kp F5      &kp F6     &kp SEMI
+            &kp CAPS    &kp PIPE   &kp LPAR   &kp RPAR    &trans         &kp F8     &kp F4    &kp F5      &kp F6     &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LSHFT  &kp BSLH     &kp LBKT   &kp RBKT   &trans          &kp F7     &kp F1    &kp F2      &kp F3     &kp ENTER
+           &kp LSHFT  &kp BSLH     &kp LBKT   &kp RBKT   &trans          &kp F7     &kp F1    &kp F2      &kp F3     &kp RSHFT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
