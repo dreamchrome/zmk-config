@@ -64,7 +64,7 @@
 
         // Trying out this alternative enter
         combo_enter_right {
-            timeout-ms = <60>;
+            timeout-ms = <80>;
             key-positions = <16 17 18>;
             bindings = <&kp ENTER>;
             layers = <0>;
@@ -72,34 +72,34 @@
 
         // Used for doc formatting in VS Code
         combo_shift_alt_f {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <11 12 13>;
             bindings = <&kp LS(LA(F))>;
             layers = <0>;
         };
         // Backspace and delete
         combo_backspace_right {
-            timeout-ms = <40>;
+            timeout-ms = <80>;
             key-positions = <6 7 8>;
             bindings = <&kp BACKSPACE>;
             layers = <0>;
         };
         combo_delete_right {
-            timeout-ms = <80>;
+            timeout-ms = <100>;
             key-positions = <7 8 9>;
             bindings = <&kp DEL>;
             layers = <0>;
         };
-        // combo_backspace_left {
-        //     timeout-ms = <40>;
-        //     key-positions = <11 12>;
-        //     bindings = <&kp BACKSPACE>;
-        // };
-        // combo_delete_left {
-        //     timeout-ms = <80>;
-        //     key-positions = <10 11 12>;
-        //     bindings = <&kp DEL>;
-        // };
+        combo_backspace_left {
+            timeout-ms = <80>;
+            key-positions = <1 2 3>;
+            bindings = <&kp BACKSPACE>;
+        };
+        combo_delete_left {
+            timeout-ms = <100>;
+            key-positions = <0 1 2>;
+            bindings = <&kp DEL>;
+        };
         // To fix accidental two key preseses with right thumb
         // combo_rightspaces {
         //     timeout-ms = <110>;
@@ -150,19 +150,19 @@
         };
         // Clipboard with right hand
         cut_right {
-            timeout-ms = <110>;
+            timeout-ms = <120>;
             key-positions = <15 16 17 18>;
             bindings = <&kp LG(X)>;
             layers = <0>;
         };
         copy_right {
-            timeout-ms = <110>;
+            timeout-ms = <120>;
             key-positions = <16 17 18 19>;
             bindings = <&kp LG(C)>;
             layers = <0>;
         };
         paste_right {
-            timeout-ms = <110>;
+            timeout-ms = <120>;
             key-positions =<26 27 28 29>;
             bindings = <&kp LG(V)>;
             layers = <0>;
@@ -199,9 +199,9 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAV   &kp UNDER   &kp LBRC   &kp RBRC   &kp TAB         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
+            &kp GRAV   &kp PIPE   &kp LBRC   &kp RBRC   &kp TAB         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp CAPS    &kp PIPE   &kp LPAR   &kp RPAR    &trans         &kp F8     &kp F4    &kp F5      &kp F6     &kp ENTER
+            &kp CAPS    &kp UNDER   &kp LPAR   &kp RPAR  &kp COLON      &kp F8     &kp F4    &kp F5      &kp F6     &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
            &kp LSHFT  &kp BSLH     &kp LBKT   &kp RBKT   &trans          &kp F7     &kp F1    &kp F2      &kp F3     &kp RSHFT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
@@ -217,7 +217,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        &kp LSHFT &kp LA(LBKT)  &kp RA(RBKT)  &kp TAB   &kp K_CMENU   &kp MINUS    &kp N1    &kp N2     &kp N3    &kp RSHFT
+        &kp LSHFT &kp LA(LBKT)  &kp RA(RBKT)  &kp ENTER  &kp K_CMENU   &kp MINUS    &kp N1    &kp N2     &kp N3    &kp RSHFT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &kp SPACE     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
