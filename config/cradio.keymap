@@ -64,7 +64,7 @@
 
         // Trying out this alternative enter
         combo_enter_right {
-            timeout-ms = <80>;
+            timeout-ms = <100>;
             key-positions = <16 17 18>;
             bindings = <&kp ENTER>;
             layers = <0>;
@@ -79,13 +79,13 @@
         };
         // Backspace and delete
         combo_backspace_right {
-            timeout-ms = <80>;
+            timeout-ms = <130>;
             key-positions = <6 7 8>;
             bindings = <&kp BACKSPACE>;
             layers = <0>;
         };
         combo_delete_right {
-            timeout-ms = <100>;
+            timeout-ms = <150>;
             key-positions = <7 8 9>;
             bindings = <&kp DEL>;
             layers = <0>;
