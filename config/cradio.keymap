@@ -78,11 +78,11 @@
             layers = <0>;
         };
         // Backspace and delete
-        combo_backspace_right {
+        combo_semicolon_right {
             timeout-ms = <200>;
-            slow-release;
+            // slow-release;
             key-positions = <6 7 8 9>;
-            bindings = <&kp BACKSPACE>;
+            bindings = <&kp SEMICOLON>;
             layers = <0>;
         };
         // combo_delete_right {
@@ -200,11 +200,11 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAV   &kp PIPE   &kp LBRC   &kp RBRC   &kp TAB         &kp F9     &kp F10    &kp F11    &kp F12    &kp BSPC
+            &kp GRAV   &kp PIPE   &kp LBRC   &kp RBRC   &kp TAB         &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp CAPS    &kp UNDER   &kp LPAR   &kp RPAR  &kp COLON      &kp F8     &kp F4    &kp F5      &kp F6     &kp ENTER
+            &kp CAPS    &kp UNDER   &kp LPAR   &kp RPAR  &kp COLON      &kp F9     &kp F4    &kp F5      &kp F6     &kp F7
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LSHFT  &kp BSLH     &kp LBKT   &kp RBKT   &trans          &kp F7     &kp F1    &kp F2      &kp F3     &kp RSHFT
+           &kp LSHFT  &kp BSLH     &kp LBKT   &kp RBKT   &trans          &kp F8     &kp F1    &kp F2      &kp F3     &kp RSHFT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &lt 2 ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -214,9 +214,9 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp ESC  &kp LA(LEFT) &kp UARW &kp LA(RIGHT)  &kp LG(TAB)      &kp PLUS    &kp N7    &kp N8      &kp N9     &kp N0
+            &kp ESC  &kp LA(LEFT) &kp UARW &kp LA(RIGHT)  &kp LG(TAB)    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp SEMI
+            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp PERIOD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         &kp LSHFT &kp LA(LBKT)  &kp RA(RBKT)  &kp ENTER  &kp K_CMENU   &kp MINUS    &kp N1    &kp N2     &kp N3    &kp RSHFT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
