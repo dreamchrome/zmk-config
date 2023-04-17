@@ -79,17 +79,18 @@
         };
         // Backspace and delete
         combo_backspace_right {
-            timeout-ms = <130>;
-            key-positions = <6 7 8>;
+            timeout-ms = <200>;
+            slow-release;
+            key-positions = <6 7 8 9>;
             bindings = <&kp BACKSPACE>;
             layers = <0>;
         };
-        combo_delete_right {
-            timeout-ms = <150>;
-            key-positions = <7 8 9>;
-            bindings = <&kp DEL>;
-            layers = <0>;
-        };
+        // combo_delete_right {
+        //     timeout-ms = <150>;
+        //     key-positions = <7 8 9>;
+        //     bindings = <&kp DEL>;
+        //     layers = <0>;
+        // };
         combo_backspace_left {
             timeout-ms = <80>;
             key-positions = <1 2 3>;
@@ -116,7 +117,7 @@
         };
         combo_controllayerright {
             timeout-ms = <220>;
-            key-positions = <6 7 8 9>;
+            key-positions = <5 6 7 8>;
             slow-release;
             bindings = <&mo 3>;
             layers = <0>;
@@ -236,7 +237,7 @@
         //│          │          │          │          │          │   │          │          │          │          │          │
            &trans     &out OUT_USB  &trans  &kp C_PP   &kp C_PP        &kp C_PP   &kp C_PP   &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &kp C_VOL_DN  &kp C_VOL_UP    &kp C_VOL_DN  &kp C_VOL_UP
+                                        &kp C_VOL_DN  &kp C_VOL_UP    &kp C_VOL_UP  &kp C_VOL_DN
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
