@@ -64,7 +64,7 @@
 
         // Trying out this alternative enter
         combo_enter_right {
-            timeout-ms = <100>;
+            timeout-ms = <160>;
             key-positions = <16 17 18>;
             bindings = <&kp ENTER>;
             layers = <0>;
