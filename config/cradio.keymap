@@ -261,26 +261,26 @@
 
         // Win/Mac switching
         winmacswitch_right { 
-            timeout-ms = <200>;
-            key-positions =<25 26 27 28>;
+            timeout-ms = <300>;
+            key-positions =<9 19 29>;
             bindings = <&to WINBASE>;
             layers = <BASELAYER>;
         };
         winmacswitch_left { 
             timeout-ms = <200>;
-            key-positions =<21 22 23 24>;
+            key-positions =<0 10 20>;
             bindings = <&to WINBASE>;
             layers = <BASELAYER>;
         };
         win_winmacswitch_right { 
             timeout-ms = <200>;
-            key-positions =<25 26 27 28>;
+            key-positions =<9 19 29>;
             bindings = <&to BASELAYER>;
             layers = <WINBASE>;
         };
         win_winmacswitch_left { 
             timeout-ms = <200>;
-            key-positions =<21 22 23 24>;
+            key-positions =<0 10 20>;
             bindings = <&to BASELAYER>;
             layers = <WINBASE>;
         };
