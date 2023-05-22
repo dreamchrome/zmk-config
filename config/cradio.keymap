@@ -48,7 +48,7 @@
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
-        }
+        };
     };
 
     combos {
@@ -98,6 +98,13 @@
             bindings = <&kp LS(LA(F))>;
             layers = <0>;
         };
+        
+        // Esc
+        combo_esc_left {
+            timeout-ms = <100>;
+            key-positions = <0 1 2 3>;
+            bindings = <&kp ESC>;
+        }
 
         // Backspace and delete
         // combo_delete_right {
@@ -106,7 +113,6 @@
         //     bindings = <&kp DEL>;
         //     layers = <0>;
         // };
-
         combo_backspace_left {
             timeout-ms = <80>;
             key-positions = <1 2 3>;
@@ -124,11 +130,12 @@
         //     key-positions = <32 33>;
         //     bindings = <&kp SPACE>;
         // };
+
         // The control layers
         combo_controllayerleft {
             timeout-ms = <220>;
             slow-release;
-            key-positions = <0 1 2 3>;
+            key-positions = <1 2 3 4>;
             bindings = <&mo 3>;
             layers = <0>;
         };
@@ -139,6 +146,7 @@
             bindings = <&mo 3>;
             layers = <0>;
         };
+
         // Alt and Ctrl
         combo_leftcontrol {
             timeout-ms = <90>;
@@ -171,19 +179,19 @@
         cut_right {
             timeout-ms = <120>;
             key-positions = <15 16 17 18>;
-            bindings = <&kp LG(X)>;
+            bindings = <&kp LC(X)>;
             layers = <0>;
         };
-        // copy_right {
-        //     timeout-ms = <120>;
-        //     key-positions = <6 7 8 9>;
-        //     bindings = <&kp LG(C)>;
-        //     layers = <0>;
-        // };
+        copy_right {
+            timeout-ms = <120>;
+            key-positions = <6 7 8 9>;
+            bindings = <&kp LC(C)>;
+            layers = <0>;
+        };
         paste_right {
             timeout-ms = <120>;
             key-positions =<26 27 28 29>;
-            bindings = <&kp LG(V)>;
+            bindings = <&kp LC(V)>;
             layers = <0>;
         };
     };
