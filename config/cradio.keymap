@@ -49,7 +49,7 @@
             flavor = "hold-preferred";
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
-            bindings = <&to>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -133,20 +133,20 @@
         //     bindings = <&kp SPACE>;
         // };
 
-        // The control layers
+        // The system control layers
         combo_controllayerleft {
             timeout-ms = <220>;
             slow-release;
             key-positions = <1 2 3 4>;
             bindings = <&mo 3>;
-            layers = <0>;
+            layers = <0 1 2>;
         };
         combo_controllayerright {
             timeout-ms = <220>;
             key-positions = <5 6 7 8>;
             slow-release;
             bindings = <&mo 3>;
-            layers = <0>;
+            layers = <0 1 2>;
         };
 
         // Alt and Ctrl
