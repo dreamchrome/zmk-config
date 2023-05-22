@@ -240,19 +240,19 @@
 
 
         // Win Clipboard with right hand
-        cut_right {
+        win_cut_right {
             timeout-ms = <120>;
             key-positions = <15 16 17 18>;
             bindings = <&kp LC(X)>;
             layers = <4>;
         };
-        copy_right {
+        win_copy_right {
             timeout-ms = <120>;
             key-positions = <6 7 8 9>;
             bindings = <&kp LC(C)>;
             layers = <4>;
         };
-        paste_right {
+        win_paste_right {
             timeout-ms = <120>;
             key-positions =<26 27 28 29>;
             bindings = <&kp LC(V)>;
