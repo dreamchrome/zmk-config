@@ -42,6 +42,13 @@
         //     quick-tap-ms = <100>;
         //     bindings = <&kp>, <&kp>;
         // };
+        lt_h: layer_tap_hold_preferred {
+            label = "layer_tap_hold_preferred"; 
+            flavor = "hold-preferred";
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        }
     };
 
     combos {
@@ -62,35 +69,44 @@
         //     bindings = <&bootloader>;
         // };
 
-        // Trying out this alternative enter
+        // Enter and semi
         combo_enter_right {
             timeout-ms = <160>;
             key-positions = <16 17 18>;
             bindings = <&kp ENTER>;
+            layers = <0 1 2>;
+        };
+        combo_enter_left {
+            timeout-ms = <160>;
+            key-positions = <11 12 13>;
+            bindings = <&kp ENTER>;
+            layers = <0 1 2>;
+        };
+        combo_semicolon_right {
+            timeout-ms = <200>;
+            // slow-release;
+            // key-positions = <6 7 8 9>;
+            key-positions = <16 17 18 19>;
+            bindings = <&kp SEMICOLON>;
             layers = <0>;
         };
 
         // Used for doc formatting in VS Code
         combo_shift_alt_f {
-            timeout-ms = <60>;
-            key-positions = <11 12 13>;
+            timeout-ms = <160>;
+            key-positions = <10 11 12 13>;
             bindings = <&kp LS(LA(F))>;
             layers = <0>;
         };
+
         // Backspace and delete
-        combo_semicolon_right {
-            timeout-ms = <200>;
-            // slow-release;
-            key-positions = <6 7 8 9>;
-            bindings = <&kp SEMICOLON>;
-            layers = <0>;
-        };
         // combo_delete_right {
         //     timeout-ms = <150>;
         //     key-positions = <7 8 9>;
         //     bindings = <&kp DEL>;
         //     layers = <0>;
         // };
+
         combo_backspace_left {
             timeout-ms = <80>;
             key-positions = <1 2 3>;
@@ -101,6 +117,7 @@
             key-positions = <0 1 2>;
             bindings = <&kp DEL>;
         };
+
         // To fix accidental two key preseses with right thumb
         // combo_rightspaces {
         //     timeout-ms = <110>;
@@ -128,13 +145,13 @@
             key-positions = <20 21 22>;
             // Doing slow release here only for the left hand so ctrl-c will be easy
             slow-release;
-            bindings = <&kp LCTRL>;
+            bindings = <&kp LGUI>;
             layers = <0>;
         };
         combo_rightcontrol {
             timeout-ms = <90>;
             key-positions = <27 28 29>;
-            bindings = <&kp RCTRL>;
+            bindings = <&kp RGUI>;
             layers = <0>;
         };
         combo_leftalt {
@@ -149,6 +166,7 @@
             bindings = <&kp RALT>;
             layers = <0>;
         };
+
         // Clipboard with right hand
         cut_right {
             timeout-ms = <120>;
@@ -156,12 +174,12 @@
             bindings = <&kp LG(X)>;
             layers = <0>;
         };
-        copy_right {
-            timeout-ms = <120>;
-            key-positions = <16 17 18 19>;
-            bindings = <&kp LG(C)>;
-            layers = <0>;
-        };
+        // copy_right {
+        //     timeout-ms = <120>;
+        //     key-positions = <6 7 8 9>;
+        //     bindings = <&kp LG(C)>;
+        //     layers = <0>;
+        // };
         paste_right {
             timeout-ms = <120>;
             key-positions =<26 27 28 29>;
@@ -192,7 +210,7 @@
         //│  Z       │  X       │    C     │  V       │    B     │   │    N       │  M       │ , <      │ . >    │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LGUI   &lt 2 TAB     &lt 1 SPACE   &kp RGUI    
+                                            &kp LCTRL   &lt_h 2 TAB     &lt 1 SPACE   &kp RCTRL    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -200,27 +218,29 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAV   &kp PIPE   &kp LBRC   &kp RBRC   &kp TAB         &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
+            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBRC       &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp CAPS    &kp UNDER   &kp LPAR   &kp RPAR  &kp COLON      &kp F9     &kp F4    &kp F5      &kp F6     &kp F7
+            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F9     &kp F4    &kp F5      &kp F6     &kp F7
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LSHFT  &kp BSLH     &kp LBKT   &kp RBKT   &trans          &kp F8     &kp F1    &kp F2      &kp F3     &kp RSHFT
+           &mt LSHFT _ &kp LBKT    &kp RBKT   &kp LPAR   &kp RPAR         &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &lt 2 ESC        &trans     &trans
+                                             &trans    &lt_h 2 ESC      &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
+        // can be combined: ;: \| [{ `~ 
+        // need: `~ \| [ ] { } ( ) _ 
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp ESC  &kp LA(LEFT) &kp UARW &kp LA(RIGHT)  &kp LG(TAB)    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp N0
+            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBRC    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp PERIOD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        &kp LSHFT &kp LA(LBKT)  &kp RA(RBKT)  &kp ENTER  &kp K_CMENU   &kp MINUS    &kp N1    &kp N2     &kp N3    &kp RSHFT
+          &mt LSHFT _ &kp LBKT    &kp RBKT   &kp LPAR   &kp RPAR       &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans        &lt 1 SPACE     &trans
+                                             &trans     &trans        &lt 1 SPACE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
