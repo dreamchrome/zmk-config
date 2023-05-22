@@ -104,7 +104,7 @@
             timeout-ms = <100>;
             key-positions = <0 1 2 3>;
             bindings = <&kp ESC>;
-        }
+        };
 
         // Backspace and delete
         // combo_delete_right {
