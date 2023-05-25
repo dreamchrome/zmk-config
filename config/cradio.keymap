@@ -119,6 +119,14 @@
             layers = <0 1 2 4 5 6>;
         };
 
+        // Caps
+        combo_caps {
+            timeout-ms = <100>;
+            key-positions = <0 1 2>;
+            bindings = <&kp CAPSLOCK>;
+            layers = <0 1 2 4 5 6>;
+        };
+
         // Backspace and delete
         // combo_delete_right {
         //     timeout-ms = <150>;
@@ -132,12 +140,12 @@
             bindings = <&kp BACKSPACE>;
             layers = <0 1 2 4 5 6>;
         };
-        combo_delete_left {
-            timeout-ms = <100>;
-            key-positions = <0 1 2>;
-            bindings = <&kp DEL>;
-            layers = <0 1 2 4 5 6>;
-        };
+        // combo_delete_left {
+        //     timeout-ms = <100>;
+        //     key-positions = <0 1 2>;
+        //     bindings = <&kp DEL>;
+        //     layers = <0 1 2 4 5 6>;
+        // };
 
         // To fix accidental two key preseses with right thumb
         // combo_rightspaces {
@@ -261,25 +269,25 @@
 
         // Win/Mac switching
         winmacswitch_right { 
-            timeout-ms = <400>;
+            timeout-ms = <600>;
             key-positions =<9 19 29>;
             bindings = <&to WINBASE>;
             layers = <BASELAYER>;
         };
         winmacswitch_left { 
-            timeout-ms = <400>;
+            timeout-ms = <600>;
             key-positions =<0 10 20>;
             bindings = <&to WINBASE>;
             layers = <BASELAYER>;
         };
         win_winmacswitch_right { 
-            timeout-ms = <400>;
+            timeout-ms = <600>;
             key-positions =<9 19 29>;
             bindings = <&to BASELAYER>;
             layers = <WINBASE>;
         };
         win_winmacswitch_left { 
-            timeout-ms = <400>;
+            timeout-ms = <600>;
             key-positions =<0 10 20>;
             bindings = <&to BASELAYER>;
             layers = <WINBASE>;
