@@ -324,11 +324,11 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBRC       &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
+            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT       &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F9     &kp F4    &kp F5      &kp F6     &kp F7
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &mt LSHFT UNDER &kp LBKT    &kp RBKT   &kp LPAR   &kp RPAR         &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
+          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans    &lt_h 2 ESC      &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -340,15 +340,15 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBRC    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp N0
+            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp PERIOD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp PERIOD
+            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-          &mt LSHFT UNDER &kp LBKT    &kp RBKT   &kp LPAR   &kp RPAR       &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
+          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT       &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans        &lt 1 SPACE   &trans
+                                             &trans     &trans        &lt_h 1 SPACE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+            >;3211
         };
 
         controls_layer {
@@ -388,11 +388,11 @@
         win_right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBRC       &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
+            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBKT       &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F9     &kp F4    &kp F5      &kp F6     &kp F7
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &mt LSHFT UNDER &kp LBKT  &kp RBKT   &kp LPAR   &kp RPAR       &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
+          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans    &lt_h 6 ESC      &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -402,13 +402,13 @@
         win_left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBRC    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp N0
+            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBKT    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp PERIOD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp PERIOD
+            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-          &mt LSHFT UNDER &kp LBKT  &kp RBKT   &kp LPAR   &kp RPAR     &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
+          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT     &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans        &lt 5 SPACE   &trans
+                                             &trans     &trans        &lt_hi 5 SPACE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
