@@ -164,7 +164,7 @@
         };
         combo_controllayerright {
             timeout-ms = <220>;
-            key-positions = <5 6 7 8>;
+            key-positions = <5 15 25>;
             slow-release;
             bindings = <&mo 3>;
             layers = <0 1 2 4 5 6>;
@@ -229,7 +229,7 @@
         // Clipboard with right hand
         cut_right {
             timeout-ms = <120>;
-            key-positions = <15 16 17 18>;
+            key-positions = <5 6 7 8>;
             bindings = <&kp LG(X)>;
             layers = <0>;
         };
@@ -250,7 +250,7 @@
         // Win Clipboard with right hand
         win_cut_right {
             timeout-ms = <120>;
-            key-positions = <15 16 17 18>;
+            key-positions = <5 6 7 8>;
             bindings = <&kp LC(X)>;
             layers = <4>;
         };
@@ -292,6 +292,33 @@
             bindings = <&to BASELAYER>;
             layers = <WINBASE>;
         };
+
+        // Num pad lock
+        numpad_lock {
+            timeout-ms = <300>;
+            key-positions = <15 16 17 18>;
+            binding = <&to LLEFT>;
+            layers = <BASELAYER>;
+        }
+        numpad_unlock {
+            timeout-ms = <300>;
+            key-positions = <15 16 17 18>;
+            binding = <&to BASELAYER>;
+            layers = <LLEFT>;
+        }
+
+        win_numpad_lock {
+            timeout-ms = <300>;
+            key-positions = <15 16 17 18>;
+            binding = <&to WINLLEFT>;
+            layers = <WINBASE>;
+        }
+        win_numpad_unlock {
+            timeout-ms = <300>;
+            key-positions = <15 16 17 18>;
+            binding = <&to WINBASE>;
+            layers = <WINLLEFT>;
+        }
     };
 
     // conditional_layers {
