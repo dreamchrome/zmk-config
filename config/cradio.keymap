@@ -299,26 +299,26 @@
             key-positions = <15 16 17 18>;
             binding = <&to LLEFT>;
             layers = <BASELAYER>;
-        }
+        };
         numpad_unlock {
             timeout-ms = <300>;
             key-positions = <15 16 17 18>;
             binding = <&to BASELAYER>;
             layers = <LLEFT>;
-        }
+        };
 
         win_numpad_lock {
             timeout-ms = <300>;
             key-positions = <15 16 17 18>;
             binding = <&to LWINLEFT>;
             layers = <WINBASE>;
-        }
+        };
         win_numpad_unlock {
             timeout-ms = <300>;
             key-positions = <15 16 17 18>;
             binding = <&to WINBASE>;
             layers = <LWINLEFT>;
-        }
+        };
     };
 
     // conditional_layers {
