@@ -385,6 +385,18 @@
             bindings = <&mo LEDITING>;
             layers = <0 1 2 4 5 6>;
         };
+        fn_lock {
+            timeout-ms = <300>;
+            key-positions = <15 16 17 18>;
+            bindings = <&to LRIGHT>;
+            layers = <BASELAYER>;
+        };
+        fn_unlock {
+            timeout-ms = <300>;
+            key-positions = <15 16 17 18>;
+            bindings = <&to BASELAYER>;
+            layers = <LRIGHT>;
+        };
     };
 
     // conditional_layers {
@@ -417,11 +429,11 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT       &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
+            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT       &kp F9    &kp F10   &kp F11    &kp F12    &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F9     &kp F4    &kp F5      &kp F6     &kp F7
+            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F8     &kp F4    &kp F5      &kp F6     &kp BACKSPACE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
+          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F7     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans    &kp ESC      &to BASELAYER    &kp RGUI
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
