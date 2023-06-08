@@ -20,6 +20,7 @@
 #define LWINRIGHT 5
 #define LWINLEFT 6
 #define LWINCONTROL 7
+#define LEDITING 8
 
 
 
@@ -32,6 +33,11 @@
 //     flavor = "tap-preferred";
 //     tapping-term-ms = <180>;
 // };
+//TODO: maybe this should be a separate behavior
+&sl {
+    // release-after-ms = <2000>;
+    /delete-property/ quick-release;
+};
 
 / {
     behaviors {
@@ -53,6 +59,7 @@
         //     quick-tap-ms = <100>;
         //     bindings = <&kp>, <&kp>;
         // };
+
         lt_h: layer_tap_hold_preferred {
             #binding-cells = <2>;
             label = "layer_tap_hold_preferred"; 
@@ -61,6 +68,34 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
+
+        ht_sl: layer_tap_reversed {
+            #binding-cells = <2>;
+            label = "layer_tap_reversed"; 
+            flavor = "hold-preferred";
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&sl>;
+        };
+        
+        tdf: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <90>;
+            bindings = <&ht_sl RGUI 1>, <&to 1>;
+        };
+    };
+
+    macros {
+        editing_macro: editing_macro {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_editing_macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp BSPC &mo LEDITING>;
+        };  
     };
 
     combos {
@@ -94,14 +129,14 @@
             bindings = <&kp ENTER>;
             layers = <0 1 2 4 5 6>;
         };
-        combo_semicolon_right {
-            timeout-ms = <200>;
-            // slow-release;
-            // key-positions = <6 7 8 9>;
-            key-positions = <16 17 18 19>;
-            bindings = <&kp SEMICOLON>;
-            layers = <0 1 2 4 5 6>;
-        };
+        // combo_semicolon_right {
+        //     timeout-ms = <200>;
+        //     // slow-release;
+        //     // key-positions = <6 7 8 9>;
+        //     key-positions = <16 17 18 19>;
+        //     bindings = <&kp SEMICOLON>;
+        //     layers = <0 1 2 4 5 6>;
+        // };
 
         // Used for doc formatting in VS Code
         combo_shift_alt_f {
@@ -294,30 +329,46 @@
         };
 
         // Num pad lock
-        numpad_lock {
-            timeout-ms = <300>;
-            key-positions = <15 16 17 18>;
-            bindings = <&to LLEFT>;
-            layers = <BASELAYER>;
-        };
-        numpad_unlock {
-            timeout-ms = <300>;
-            key-positions = <15 16 17 18>;
-            bindings = <&to BASELAYER>;
-            layers = <LLEFT>;
-        };
+        // numpad_lock {
+        //     timeout-ms = <300>;
+        //     key-positions = <15 16 17 18>;
+        //     bindings = <&to LLEFT>;
+        //     layers = <BASELAYER>;
+        // };
+        // numpad_unlock {
+        //     timeout-ms = <300>;
+        //     key-positions = <15 16 17 18>;
+        //     bindings = <&to BASELAYER>;
+        //     layers = <LLEFT>;
+        // };
 
-        win_numpad_lock {
-            timeout-ms = <300>;
-            key-positions = <15 16 17 18>;
-            bindings = <&to LWINLEFT>;
-            layers = <WINBASE>;
+        // win_numpad_lock {
+        //     timeout-ms = <300>;
+        //     key-positions = <15 16 17 18>;
+        //     bindings = <&to LWINLEFT>;
+        //     layers = <WINBASE>;
+        // };
+        // win_numpad_unlock {
+        //     timeout-ms = <300>;
+        //     key-positions = <15 16 17 18>;
+        //     bindings = <&to WINBASE>;
+        //     layers = <LWINLEFT>;
+        // };
+
+        // Editing
+        combo_editing_with_bspc {
+            timeout-ms = <200>;
+            slow-release;
+            key-positions = <16 17 18 19>;
+            bindings = <&editing_macro>;
+            layers = <0 1 2 4 5 6>;
         };
-        win_numpad_unlock {
-            timeout-ms = <300>;
-            key-positions = <15 16 17 18>;
-            bindings = <&to WINBASE>;
-            layers = <LWINLEFT>;
+        combo_editing {
+            timeout-ms = <200>;
+            slow-release;
+            key-positions = <16 18 19>;
+            bindings = <&mo LEDITING>;
+            layers = <0 1 2 4 5 6>;
         };
     };
 
@@ -343,7 +394,7 @@
         //│  Z       │  X       │    C     │  V       │    B     │   │    N       │  M       │ , <      │ . >    │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LGUI   &lt_h 2 TAB     &lt 1 SPACE   &kp RGUI  
+                                          &mt LGUI SEMI  &lt_h 2 TAB   &lt 2 SPACE  &tdf
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -357,7 +408,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
           &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans    &lt_h 2 ESC      &trans     &trans
+                                             &trans    &kp ESC      &to BASELAYER    &kp RGUI
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -373,7 +424,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
           &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT       &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans        &lt_h 1 SPACE   &trans
+                                             &trans     &kp ESC        &kp SPACE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -453,6 +504,23 @@
            &trans     &out OUT_USB  &trans  &kp C_PP   &kp C_PP        &kp C_PP   &kp C_PP   &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                         &kp C_VOL_DN  &kp C_VOL_UP    &kp C_VOL_UP  &kp C_VOL_DN
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        editing_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans     &trans    &trans          &trans     &trans     &trans     &trans      &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //           │          │          │          │           │  │          │          │          |          |          |
+          &trans       &trans     &trans     &trans    &trans            &trans     &kp BSPC     &kp DEL     &trans      &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
+            &trans     &trans     &trans    &trans       &trans    &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
