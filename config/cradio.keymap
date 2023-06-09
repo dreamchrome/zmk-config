@@ -192,7 +192,7 @@
             timeout-ms = <180>;
             key-positions = <8 9>;
             bindings = <&kp DEL>;
-            layers = <LNUMPAD>;
+            layers = <LNUMPAD LWINLEFT>;
         };
         combo_backspace_left {
             timeout-ms = <80>;
@@ -435,7 +435,7 @@
         //│  Z       │  X       │    C     │  V       │    B     │   │    N       │  M       │ , <      │ . >    │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &mt LGUI SEMI  &lt_h 2 TAB   &lt 2 SPACE  &l_or_key RGUI 0
+                                          &mt LGUI SEMI  &lt_h 2 TAB   &lt 2 SPACE  &l_or_key RGUI LFUNCTIONS
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -499,7 +499,7 @@
         //│  Z       │  X       │    C     │  V       │    B     │   │    N       │  M       │ , <      │ . >    │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LCTRL   &lt_h 6 TAB     &lt 5 SPACE   &kp RCTRL
+                                            &mt LCTRL SEMI   &lt_h 6 TAB     &lt 5 SPACE   &l_or_key RCTRL LWINRIGHT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -507,13 +507,13 @@
         win_right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBKT       &kp F10    &kp F11   &kp BSPC    &kp DEL    &kp F12
+            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBKT       &kp F9    &kp F10   &kp F11    &kp F12    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F9     &kp F4    &kp F5      &kp F6     &kp F7
+            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F8     &kp F4    &kp F5      &kp F6    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F8     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
+          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F7     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans    &lt_h 6 ESC      &trans     &trans
+                                             &trans    &lt_h 6 ESC      &trans     &kp RCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -521,13 +521,13 @@
         win_left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBKT    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp PERIOD
+            &kp GRAVE  &kp LC(LEFT) &kp UARW &kp LC(RIGHT) &kp LBKT    &kp PLUS    &kp N7   &kp N8    &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
           &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT     &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans        &lt_h 5 SPACE   &trans
+                                             &trans     &kp ESC        &kp SPACE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
