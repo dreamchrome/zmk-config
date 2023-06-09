@@ -443,9 +443,9 @@
         functions_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT       &kp F9    &kp F10   &kp F11    &kp F12    &kp trans
+            &kp GRAVE  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT       &kp F9    &kp F10   &kp F11    &kp F12    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F8     &kp F4    &kp F5      &kp F6    &kp trans
+            &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END          &kp F8     &kp F4    &kp F5      &kp F6    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
           &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT         &kp F7     &kp F1    &kp F2      &kp F3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
