@@ -471,7 +471,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &u_or_f10      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &kp A        &kp S     &kp D         &kp F     &kp G        &kp H     &j_or_f4      &k_or_f5   K      &kp L    &kp SQT
+            &kp A        &kp S     &kp D         &kp F     &kp G        &kp H     &j_or_f4      &k_or_f5      &kp L    &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │    C     │  V       │    B     │   │    N       │  M       │ , <      │ . >    │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
