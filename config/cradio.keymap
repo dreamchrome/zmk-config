@@ -130,7 +130,6 @@
             mods = <(MOD_RGUI)>;
         };
     };
-    };
 
     macros {
         editing_macro: editing_macro {
