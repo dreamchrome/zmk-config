@@ -103,7 +103,15 @@
             label = "bpsc_or_del";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        shift_brace_fix: shift_brace_fix {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_brace_fix";
+            #binding-cells = <0>;
+            bindings = <&kp RBRC>, <&braces_macro>;
+            mods = <(MOD_LSFT)>;
         };
 
         j_or_f4: j_or_f4 {
@@ -146,6 +154,7 @@
                 , <&macro_release &mo LEDITING>
                 ;
         };
+
         enter_macro: enter_macro {
             compatible = "zmk,behavior-macro";
             label = "ZM_enter_macro";
@@ -158,6 +167,18 @@
                 , <&macro_press &mo LENTER>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo LENTER>
+                ;
+        };
+
+        braces_macro: braces_macro {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_braces_macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            // bindings = <&kp BSPC &mo LEDITING>;
+            bindings
+                = <&kp LBRC &kp RBRC>
                 ;
         };
     };
@@ -500,11 +521,11 @@
         numpad_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp ESC  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT    &kp PLUS    &kp N7     &kp N8    &kp N9     &kp BSPC
+            &kp ESC  &kp LA(LEFT) &kp UARW &kp LA(RIGHT) &kp LBKT        &kp PLUS    &kp N7     &kp N8    &kp N9    &bpsc_or_del
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp HOME   &kp LEFT   &kp DARW   &kp RIGHT   &kp END       &kp EQUAL    &kp N4    &kp N5      &kp N6    &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-          &mt LSHFT LBRC &kp RBRC  &kp LPAR  &kp RPAR   &kp RBKT       &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
+        &mt LSHFT LBRC &shift_brace_fix  &kp LPAR  &kp RPAR   &kp RBKT       &kp MINUS    &kp N1    &kp N2     &kp N3    &mt RSHFT BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &kp SPACE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
