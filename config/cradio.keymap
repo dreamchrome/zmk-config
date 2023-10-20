@@ -459,13 +459,13 @@
             bindings = <&editing_macro>;
             layers = <0 1 2 4 5 6>;
         };
-        combo_editing_right {
-            timeout-ms = <200>;
-            slow-release;
-            key-positions = <6 8 9>;
-            bindings = <&mo LBACKSPACE>;
-            layers = <0 1 2 4 5 6>;
-        };
+        // combo_editing_right {
+        //     timeout-ms = <200>;
+        //     slow-release;
+        //     key-positions = <6 8 9>;
+        //     bindings = <&mo LBACKSPACE>;
+        //     layers = <0 1 2 4 5 6>;
+        // };
         combo_editing_with_bspc_left {
             timeout-ms = <200>;
             slow-release;
@@ -473,27 +473,27 @@
             bindings = <&editing_macro>;
             layers = <0 1 2 4 5 6>;
         };
-        combo_editing_left {
-            timeout-ms = <200>;
-            slow-release;
-            key-positions = <1 2 4>;
-            bindings = <&mo LBACKSPACE>;
-            layers = <0 1 2 4 5 6>;
-        };
+        // combo_editing_left {
+        //     timeout-ms = <200>;
+        //     slow-release;
+        //     key-positions = <1 2 4>;
+        //     bindings = <&mo LBACKSPACE>;
+        //     layers = <0 1 2 4 5 6>;
+        // };
 
         // Function layer locking
-        fn_lock {
-            timeout-ms = <300>;
-            key-positions = <15 16 17 18>;
-            bindings = <&to LFUNCTIONS>;
-            layers = <BASELAYER>;
-        };
-        fn_unlock {
-            timeout-ms = <300>;
-            key-positions = <15 16 17 18>;
-            bindings = <&to BASELAYER>;
-            layers = <LFUNCTIONS>;
-        };
+        // fn_lock {
+        //     timeout-ms = <300>;
+        //     key-positions = <15 16 17 18>;
+        //     bindings = <&to LFUNCTIONS>;
+        //     layers = <BASELAYER>;
+        // };
+        // fn_unlock {
+        //     timeout-ms = <300>;
+        //     key-positions = <15 16 17 18>;
+        //     bindings = <&to BASELAYER>;
+        //     layers = <LFUNCTIONS>;
+        // };
 
         
     };
