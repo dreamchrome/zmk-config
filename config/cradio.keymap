@@ -146,6 +146,15 @@
             bindings = <&kp U>, <&kp F10>;
             mods = <(MOD_RGUI)>;
         };
+
+        // The exceptions for LGUI
+        q_or_app_switch: q_or_app_switch {
+            compatible = "zmk,behavior-mod-morph";
+            label = "q_or_app_switch";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&app_switch_macro>;
+            mods = <(MOD_LGUI)>;
+        };
     };
 
     macros {
@@ -164,7 +173,7 @@
                 ;
         };
 
-        // Allows moving to the enter layer while sending and enter on the first press
+        // Allows moving to the enter layer while sending an enter on the first press
         enter_macro: enter_macro {
             compatible = "zmk,behavior-macro";
             label = "ZM_enter_macro";
@@ -191,6 +200,18 @@
                 = <&kp LBRC &kp RBRC>
                 ;
         };
+
+        app_switch_macro: app_switch_macro {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_app_switch_macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            // bindings = <&kp BSPC &mo LEDITING>;
+            bindings
+                = <&kp LGUI &kp TAB>
+                ;
+        }
     };
 
     combos {
@@ -253,7 +274,7 @@
 
         // Caps
         combo_caps {
-            timeout-ms = <100>;
+            timeout-ms = <120>;
             key-positions = <0 1 2>;
             bindings = <&kp CAPSLOCK>;
             layers = <0 1 2 4 5 6>;
@@ -454,7 +475,7 @@
 
         //Editing
         combo_editing_with_bspc_right {
-            timeout-ms = <360>;
+            timeout-ms = <460>;
             slow-release;
             key-positions = <6 7 8 9>;
             bindings = <&editing_macro>;
