@@ -23,6 +23,7 @@
 #define LEDITING 8
 #define LENTER 9
 #define LBACKSPACE 10
+#define LRIGHTARROWS 11
 // #define LMACROS 9
 
 
