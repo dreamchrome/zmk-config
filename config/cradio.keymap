@@ -156,9 +156,23 @@
             bindings = <&kp Q>, <&app_switch_macro>;
             mods = <(MOD_LGUI)>;
         };
+        q_or_capslock: q_or_capslock {
+            compatible = "zmk,behavior-mod-morph";
+            label = "q_or_capslock";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp CAPS>;
+            mods = <(MOD_LGUI)>;
+        };
         p_or_app_switch: p_or_app_switch {
             compatible = "zmk,behavior-mod-morph";
             label = "p_or_app_switch";
+            #binding-cells = <0>;
+            bindings = <&kp P>, <&kp app_switch_macro>;
+            mods = <(MOD_RGUI)>;
+        };
+        p_or_tab: p_or_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "p_or_tab";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp TAB>;
             mods = <(MOD_RGUI)>;
@@ -542,7 +556,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &q_or_app_switch      &kp W      &kp E      &kp R      &kp T          &kp Y      &u_or_f10      &kp I      &kp O      &p_or_app_switch
+        &q_or_capslock    &kp W     &kp E    &kp R    &kp T            &kp Y     &u_or_f10   &kp I     &kp O      &p_or_tab
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
             &kp A        &kp S     &kp D         &kp F     &kp G        &kp H     &j_or_f4      &k_or_f5      &kp L    &kp SQT
