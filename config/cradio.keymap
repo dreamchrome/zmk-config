@@ -167,7 +167,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "p_or_app_switch";
             #binding-cells = <0>;
-            bindings = <&kp P>, <&kp app_switch_macro>;
+            bindings = <&kp P>, <&app_switch_macro>;
             mods = <(MOD_RGUI)>;
         };
         p_or_tab: p_or_tab {
