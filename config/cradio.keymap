@@ -174,8 +174,8 @@
             compatible = "zmk,behavior-mod-morph";
             label = "p_or_tab";
             #binding-cells = <0>;
-            bindings = <&kp P>, <&kp LGUI &kp TAB>;
-            mods = <(MOD_RGUI)>;
+            bindings = <&kp P>, <&kp TAB>;
+            mods = <MOD_RGUI>;
         };
     };
 
