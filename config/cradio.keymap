@@ -227,11 +227,11 @@
             compatible = "zmk,behavior-macro";
             label = "ZM_app_switch_macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <10>;
+            tap-ms = <50>;
             // bindings = <&kp BSPC &mo LEDITING>;
             bindings
-                = <&kp LGUI &kp TAB>
+                = <&kp LGUI>, <&kp TAB>
                 ;
         };
     };
