@@ -103,6 +103,16 @@
             bindings = <&kp>, <&sl>;
         };
 
+        // Mod-tap with hold-preferred: immediately activates modifier when another key is pressed
+        mt_h: mod_tap_hold_preferred {
+            #binding-cells = <2>;
+            label = "mod_tap_hold_preferred";
+            flavor = "hold-preferred";
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+
         // Backspace, but delete if shift is held
         // bpsc_or_del: bpsc_or_del {
         //     compatible = "zmk,behavior-mod-morph";
@@ -154,7 +164,7 @@
             label = "q_or_app_switch";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp TAB>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LGUI)>;
         };
         q_or_capslock: q_or_capslock {
             compatible = "zmk,behavior-mod-morph";
@@ -168,7 +178,7 @@
             label = "p_or_app_switch";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp TAB>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_RGUI)>;
         };
         p_or_tab: p_or_tab {
             compatible = "zmk,behavior-mod-morph";
@@ -223,39 +233,10 @@
                 ;
         };
 
-        app_switch_macro: app_switch_macro {
-            compatible = "zmk,behavior-macro";
-            label = "ZM_app_switch_macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &kp TAB>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LGUI>
-                ;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        // App switching - hold thumb + tap Q/P to cycle, release thumb to select
-        combo_appswitch_left {
-            timeout-ms = <50>;
-            key-positions = <0 30>;  // Q + left thumb
-            slow-release;
-            bindings = <&app_switch_macro>;
-            layers = <0>;
-        };
-        combo_appswitch_right {
-            timeout-ms = <50>;
-            key-positions = <9 33>;  // P + right thumb
-            slow-release;
-            bindings = <&app_switch_macro>;
-            layers = <0>;
-        };
 
         // combo_esc {
         //     timeout-ms = <30>;
@@ -583,7 +564,7 @@
         //│  Z       │  X       │    C     │  V       │    B     │   │    N       │  M       │ , <      │ . >    │ / ?      │
         &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N   &kp M    &kp COMMA    &kp DOT    &mt RSHFT FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &mt LGUI TAB  &lt_h 2 SPACE   &lt 2 SPACE  &l_or_key RGUI LFUNCTIONS
+                                          &mt_h LGUI TAB  &lt_h 2 SPACE   &lt 2 SPACE  &l_or_key RGUI LFUNCTIONS
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
