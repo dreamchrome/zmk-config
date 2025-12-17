@@ -13,13 +13,13 @@
 #
 ---
 include:
-  # - board: nice_nano_v2
+  # - board: nice_nano
   #   shield: swoop_left
-  # - board: nice_nano_v2
+  # - board: nice_nano
   #   shield: swoop_right
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: cradio_left
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: cradio_right
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
