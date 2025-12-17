@@ -165,6 +165,7 @@
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp TAB>;
             mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
         };
         q_or_capslock: q_or_capslock {
             compatible = "zmk,behavior-mod-morph";
@@ -179,6 +180,7 @@
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp TAB>;
             mods = <(MOD_RGUI)>;
+            keep-mods = <(MOD_RGUI)>;
         };
         p_or_tab: p_or_tab {
             compatible = "zmk,behavior-mod-morph";
