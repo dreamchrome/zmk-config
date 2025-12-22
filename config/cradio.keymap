@@ -719,7 +719,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &kp DEL     &kp BACKSPACE    &trans          &trans     &kp BSPC     &kp DEL     &trans      &trans
+            &kp BSPC   &kp BSPC   &kp DEL     &kp BACKSPACE    &trans          &trans     &kp BSPC     &kp DEL     &kp BSPC    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //           │          │          │          │          │  │          │          │          |          |          |
           &trans       &trans     &trans   &trans    &trans       &trans     &trans           &trans     &trans       &trans
