@@ -67,10 +67,11 @@
 
         lt_h: layer_tap_hold_preferred {
             #binding-cells = <2>;
-            label = "layer_tap_hold_preferred"; 
+            label = "layer_tap_hold_preferred";
             flavor = "hold-preferred";
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
+            hold-while-undecided;
             bindings = <&mo>, <&kp>;
         };
 
