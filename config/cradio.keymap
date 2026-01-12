@@ -594,11 +594,11 @@
         numpad_layer {
             bindings = <
         //╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    [ {     │   │     +      │     7      │     8      │     9      │     0      │
-            &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp LBKT        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp N0
+        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    [ {     │   │     +      │     7      │     8      │     9      │    BSPC    │
+            &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp LBKT        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp BSPC
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│    Home    │    Left    │    Down    │   Right    │    End     │   │     =      │     4      │     5      │     6      │     .      │
-            &kp HOME     &kp LEFT     &kp DARW    &kp RIGHT      &kp END       &kp KP_EQUAL    &kp N4       &kp N5       &kp N6       &kp DOT
+        //│    Home    │    Left    │    Down    │   Right    │    End     │   │     =      │     4      │     5      │     6      │     0      │
+            &kp HOME     &kp LEFT     &kp DARW    &kp RIGHT      &kp END       &kp KP_EQUAL    &kp N4       &kp N5       &kp N6       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│  { / Shft  │ } / Shf:{} │     (      │     )      │    ] }     │   │     -      │     1      │     2      │     3      │  \ / Shft  │
          &mt LSHFT LBRC &shift_brace_fix &kp LPAR   &kp RPAR     &kp RBKT       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT BSLH
