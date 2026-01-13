@@ -573,8 +573,8 @@
         //│     A      │     S      │     D      │     F      │     G      │   │     H      │  J (+F4)   │  K (+F5)   │     L      │    ' "     │
              &kp A        &kp S        &kp D        &kp F        &kp G           &kp H        &j_or_f4     &k_or_f5      &kp L       &kp SQT
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│  Z / Shft  │     X      │     C      │     V      │     B      │   │     N      │     M      │  , (+Voice)│    . >     │  /? / Shft │
-          &mt LSHFT Z     &kp X        &kp C        &kp V        &kp B           &kp N        &kp M    &comma_or_voice  &kp DOT    &mt RSHFT FSLH
+        //│  Z / Shft  │     X      │     C      │     V      │     B      │   │     N      │     M      │      ,     │    . >     │  /? / Shft │
+          &mt LSHFT Z     &kp X        &kp C        &kp V        &kp B           &kp N        &kp M       &kp COMMA      &kp DOT    &mt RSHFT FSLH
         //╰────────────┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────╯
         //                                       │  Tab / Gui │ Space / Num│   │ Space / Num│ Gui / Func │
                                                 &mt_h LGUI TAB &lt_h 2 SPACE   &lt 2 SPACE  &l_or_key RGUI LFUNCTIONS
