@@ -701,7 +701,7 @@
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│ Bootloader │  Out: BLE  │            │ Alt+Win+   │ Media Prev │   │ Media Prev │ Alt+Win+   │            │   Reset    │ Bootloader │
         //│            │            │            │   PgDn     │            │   │            │   PgDn     │            │            │            │
-          &bootloader  &out OUT_BLE   &trans   &jkp LA(LG(PG_DN)) &kp C_PREV     &kp C_PREV &kp LA(LG(PG_DN)) &trans    &sys_reset  &bootloader
+          &bootloader  &out OUT_BLE   &trans   &kp LA(LG(PG_DN)) &kp C_PREV     &kp C_PREV &kp LA(LG(PG_DN)) &trans    &sys_reset  &bootloader
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│            │  Out: USB  │            │ Play/Pause │ Play/Pause │   │ Play/Pause │    BT 0    │    BT 1    │    BT 2    │    BT 3    │
               &trans   &out OUT_USB    &trans      &kp C_PP     &kp C_PP         &kp C_PP  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
