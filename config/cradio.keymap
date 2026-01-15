@@ -514,6 +514,22 @@
             bindings = <&editing_macro>;
             layers = <0 1 2 4 5 6>;
         };
+        // Handle accidentally hitting 19 instead of 9
+        combo_editing_with_bspc_right_alt {
+            timeout-ms = <460>;
+            slow-release;
+            key-positions = <6 7 8 19>;
+            bindings = <&editing_macro>;
+            layers = <0 1 2 4 5 6>;
+        };
+        // Handle accidentally hitting both 9 and 19
+        combo_editing_with_bspc_right_both {
+            timeout-ms = <460>;
+            slow-release;
+            key-positions = <6 7 8 9 19>;
+            bindings = <&editing_macro>;
+            layers = <0 1 2 4 5 6>;
+        };
         // combo_editing_right {
         //     timeout-ms = <200>;
         //     slow-release;
@@ -603,14 +619,14 @@
         numpad_layer {
             bindings = <
         //╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    [ {     │   │     +      │     7      │     8      │     9      │    BSPC    │
-            &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp LBKT        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp BSPC
+        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    [ {     │   │     +      │     7      │     8      │     9      │     0      │
+            &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp LBKT        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│    Home    │    Left    │    Down    │   Right    │    End     │   │     =      │     4      │     5      │     6      │     0      │
             &kp HOME     &kp LEFT     &kp DARW    &kp RIGHT      &kp END       &kp KP_EQUAL    &kp N4       &kp N5       &kp N6       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│  { / Shft  │ } / Shf:{} │     (      │     )      │    ] }     │   │     -      │     1      │     2      │     3      │  \ / .     │l
-         &mt LSHFT LBRC &shift_brace_fix &kp LPAR   &kp RPAR     &kp RBKT       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT DOT
+        //│  { / Shft  │ } / Shf:{} │     (      │     )      │    ] }     │   │     -      │     1      │     2      │     3      │  \ / Shft  │
+         &mt LSHFT LBRC &shift_brace_fix &kp LPAR   &kp RPAR     &kp RBKT       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT BSLH
         //╰────────────┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────╯
         //                                       │   (held)   │    Esc     │   │   Space    │   (held)   │
                                                     &trans       &kp ESC        &kp SPACE      &trans
