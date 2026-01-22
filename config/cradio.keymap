@@ -625,8 +625,8 @@
         //│    Home    │    Left    │    Down    │   Right    │    End     │   │     =      │     4      │     5      │     6      │     0      │
             &kp HOME     &kp LEFT     &kp DARW    &kp RIGHT      &kp END       &kp KP_EQUAL    &kp N4       &kp N5       &kp N6       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│  { / Shft  │ } / Shf:{} │     (      │     )      │    ] }     │   │     -      │     1      │     2      │     3      │  \ / Shft  │
-         &mt LSHFT LBRC &shift_brace_fix &kp LPAR   &kp RPAR     &kp RBKT       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT BSLH
+        //│  { / Shft  │ } / Shf:{} │     (      │     )      │    ] }     │   │     -      │     1      │     2      │     3      │  ? / Shft  │
+         &mt LSHFT LBRC &shift_brace_fix &kp LPAR   &kp RPAR     &kp RBKT       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT QMARK
         //╰────────────┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────╯
         //                                       │   (held)   │    Esc     │   │   Space    │   (held)   │
                                                     &trans       &kp ESC        &kp SPACE      &trans
