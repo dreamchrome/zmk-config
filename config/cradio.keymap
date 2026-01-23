@@ -244,6 +244,19 @@
                 ;
         };
 
+        // Enter then RGUI+COMMA (e.g., for voice input after submit)
+        enter_voice_macro: enter_voice_macro {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_enter_voice_macro";
+            #binding-cells = <0>;
+            wait-ms = <80>;
+            tap-ms = <40>;
+            bindings
+                = <&kp ENTER>
+                , <&kp RG(COMMA)>
+                ;
+        };
+
     };
 
     combos {
@@ -604,8 +617,8 @@
         //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    [ {     │   │     F9     │    F10     │    F11     │    F12     │    ` ~     │
             &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp LBKT         &kp F9       &kp F10      &kp F11      &kp F12      &kp GRAVE
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│    Home    │    Left    │    Down    │   Right    │    End     │   │     F8     │     F4     │     F5     │     F6     │ C+A+S+F3   │
-            &kp HOME     &kp LEFT     &kp DARW    &kp RIGHT      &kp END          &kp F8       &kp F4       &kp F5       &kp F6  &kp LC(LA(LS(F3)))
+        //│    Home    │    Left    │    Down    │   Right    │    End     │   │     F8     │     F4     │     F5     │     F6     │ Ent+Voice  │
+            &kp HOME     &kp LEFT     &kp DARW    &kp RIGHT      &kp END          &kp F8       &kp F4       &kp F5       &kp F6  &enter_voice_macro
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│  { / Shft  │    } ]     │     (      │     )      │    ] }     │   │     F7     │     F1     │     F2     │     F3     │  \ / Shft  │
          &mt LSHFT LBRC   &kp RBRC    &kp LPAR     &kp RPAR     &kp RBKT          &kp F7       &kp F1       &kp F2       &kp F3   &mt RSHFT BSLH
