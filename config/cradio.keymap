@@ -123,12 +123,12 @@
         //     mods = <(MOD_RSFT|MOD_LSFT)>;
         // };
 
-        // Avoid messing up when doing enclosed braces quickly since they share the shift key
-        shift_brace_fix: shift_brace_fix {
+        // Avoid messing up when doing enclosed brackets quickly since they share the shift key
+        shift_bracket_fix: shift_bracket_fix {
             compatible = "zmk,behavior-mod-morph";
-            label = "shift_brace_fix";
+            label = "shift_bracket_fix";
             #binding-cells = <0>;
-            bindings = <&kp RBRC>, <&braces_macro>;
+            bindings = <&kp RBKT>, <&brackets_macro>;
             mods = <(MOD_LSFT)>;
         };
 
@@ -232,15 +232,14 @@
                 ;
         };
 
-        braces_macro: braces_macro {
+        brackets_macro: brackets_macro {
             compatible = "zmk,behavior-macro";
-            label = "ZM_braces_macro";
+            label = "ZM_brackets_macro";
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            // bindings = <&kp BSPC &mo LEDITING>;
             bindings
-                = <&kp LBRC &kp RBRC>
+                = <&kp LBKT &kp RBKT>
                 ;
         };
 
@@ -632,14 +631,14 @@
         numpad_layer {
             bindings = <
         //╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    [ {     │   │     +      │     7      │     8      │     9      │     0      │
-            &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp LBKT        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp N0
+        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    Home     │   │     +      │     7      │     8      │     9      │     0      │
+            &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp HOME        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│    Home    │    Left    │    Down    │   Right    │    End     │   │     =      │     4      │     5      │     6      │     0      │
-            &kp HOME     &kp LEFT     &kp DARW    &kp RIGHT      &kp END       &kp KP_EQUAL    &kp N4       &kp N5       &kp N6       &kp N0
+        //│ S+RG+Left  │    Left    │    Down    │   Right    │ S+LG+Right  │   │     =      │     4      │     5      │     6      │     0      │
+         &kp LS(RG(LEFT)) &kp LEFT  &kp DARW    &kp RIGHT  &kp LS(LG(RIGHT)) &kp KP_EQUAL &kp N4      &kp N5       &kp N6       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│  { / Shft  │ } / Shf:{} │     (      │     )      │    ] }     │   │     -      │     1      │     2      │     3      │  ? / Shft  │
-         &mt LSHFT LBRC &shift_brace_fix &kp LPAR   &kp RPAR     &kp RBKT       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT QMARK
+        //│  [ / Shft  │ ] / Shf:[] │     (      │     )      │    End     │   │     -      │     1      │     2      │     3      │  ? / Shft  │
+         &mt LSHFT LBKT &shift_bracket_fix &kp LPAR  &kp RPAR     &kp END       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT QMARK
         //╰────────────┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────╯
         //                                       │   (held)   │    Esc     │   │   Space    │   (held)   │
                                                     &trans       &kp ESC        &kp SPACE      &trans
