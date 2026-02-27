@@ -631,11 +631,11 @@
         numpad_layer {
             bindings = <
         //╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    Home     │   │     +      │     7      │     8      │     9      │     0      │
+        //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    Home    │   │     +      │     7      │     8      │     9      │     0      │
             &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp HOME        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│ LC+LG+Left  │    Left    │    Down    │   Right    │ RC+RG+Right │ │     =      │     4      │     5      │     6      │     0      │
-         &kp LC(LG(LEFT)) &kp LEFT  &kp DARW    &kp RIGHT  &kp RC(RG(RIGHT)) &kp KP_EQUAL &kp N4      &kp N5       &kp N6       &kp N0
+        //│LC+LG+COMMA │    Left    │    Down    │   Right    │ RC+RG+DOT  │   │     =      │     4      │     5      │     6      │     0      │
+         &kp LC(LG(COMMA)) &kp LEFT  &kp DARW    &kp RIGHT  &kp RC(RG(DOT)) &kp KP_EQUAL &kp N4      &kp N5       &kp N6       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│  [ / Shft  │ ] / Shf:[] │     (      │     )      │    End     │   │     -      │     1      │     2      │     3      │  ? / Shft  │
          &mt LSHFT LBKT &shift_bracket_fix &kp LPAR  &kp RPAR     &kp END       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT QMARK
