@@ -269,6 +269,7 @@
                 , <&kp SPACE>
                 , <&kp TAB>
                 , <&kp TAB>
+                , <&kp TAB>
                 , <&kp SPACE>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
