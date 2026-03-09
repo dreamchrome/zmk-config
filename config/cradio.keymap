@@ -243,6 +243,40 @@
                 ;
         };
 
+        // Toggle Claude Code edit mode and refocus chat input
+        cc_edit_mode: cc_edit_mode {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_edit_mode";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&kp TAB>
+                , <&kp SPACE>
+                , <&kp LS(TAB)>
+                ;
+        };
+
+        // Toggle Claude Code edit mode then open menu to a section
+        cc_edit_menu: cc_edit_menu {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_edit_menu";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&kp TAB>
+                , <&kp SPACE>
+                , <&kp TAB>
+                , <&kp TAB>
+                , <&kp SPACE>
+                , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
+                , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
+                , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
+                , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
+                ;
+        };
+
         // Enter then RGUI+COMMA (e.g., for voice input after submit)
         enter_voice_macro: enter_voice_macro {
             compatible = "zmk,behavior-macro";
@@ -302,10 +336,18 @@
         };
 
         // Used for doc formatting in VS Code
-        combo_shift_alt_f {
+        // combo_shift_alt_f {
+        //     timeout-ms = <160>;
+        //     key-positions = <10 11 12 13>;
+        //     bindings = <&kp LS(LA(F))>;
+        //     layers = <0>;
+        // };
+
+        // Claude Code: toggle edit mode then open menu
+        combo_cc_edit_menu {
             timeout-ms = <160>;
             key-positions = <10 11 12 13>;
-            bindings = <&kp LS(LA(F))>;
+            bindings = <&cc_edit_menu>;
             layers = <0>;
         };
         
