@@ -278,6 +278,30 @@
                 ;
         };
 
+        // Type /clear, submit, then toggle edit mode and open menu
+        cc_clear_edit_menu: cc_clear_edit_menu {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_clear_edit_menu";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            tap-ms = <40>;
+            bindings
+                = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
+                , <&kp ENTER>
+                , <&macro_wait_time 500>
+                , <&kp TAB>
+                , <&kp SPACE>
+                , <&kp TAB>
+                , <&kp TAB>
+                , <&kp TAB>
+                , <&kp SPACE>
+                , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
+                , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
+                , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
+                , <&kp DOWN> , <&kp DOWN>
+                ;
+        };
+
         // Enter then RGUI+COMMA (e.g., for voice input after submit)
         enter_voice_macro: enter_voice_macro {
             compatible = "zmk,behavior-macro";
@@ -348,7 +372,7 @@
         combo_cc_edit_menu {
             timeout-ms = <160>;
             key-positions = <10 11 12 13>;
-            bindings = <&cc_edit_menu>;
+            bindings = <&cc_clear_edit_menu>;
             layers = <0>;
         };
         
