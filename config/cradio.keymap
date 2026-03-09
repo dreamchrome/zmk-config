@@ -288,13 +288,15 @@
             bindings
                 = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
                 , <&kp ENTER>
-                , <&macro_wait_time 500>
+                , <&macro_wait_time 750>
                 , <&kp TAB>
                 , <&kp SPACE>
+                , <&macro_wait_time 250>
                 , <&kp TAB>
                 , <&kp TAB>
                 , <&kp TAB>
                 , <&kp SPACE>
+                , <&macro_wait_time 250>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
