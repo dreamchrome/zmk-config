@@ -283,24 +283,60 @@
             compatible = "zmk,behavior-macro";
             label = "ZM_cc_clear_edit_menu";
             #binding-cells = <0>;
-            wait-ms = <50>;
+            wait-ms = <20>;
             tap-ms = <40>;
             bindings
                 = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
                 , <&kp ENTER>
                 , <&macro_wait_time 750>
                 , <&kp TAB>
+                , <&macro_wait_time 100>
                 , <&kp SPACE>
                 , <&macro_wait_time 250>
                 , <&kp TAB>
                 , <&kp TAB>
                 , <&kp TAB>
+                , <&macro_wait_time 50>
                 , <&kp SPACE>
                 , <&macro_wait_time 250>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
                 , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN> , <&kp DOWN>
                 , <&kp DOWN> , <&kp DOWN>
+                ;
+        };
+
+        // Type /clear, wait, shift+tab, then type /arc-
+        cc_clear_arc: cc_clear_arc {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_clear_arc";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <40>;
+            bindings
+                = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
+                , <&kp ENTER>
+                , <&macro_wait_time 500>
+                , <&kp LS(TAB)>
+                , <&macro_wait_time 150>
+                , <&kp FSLH &kp A &kp R &kp C &kp MINUS>
+                ;
+        };
+
+        // Type /clear, wait, shift+tab, then type /spec-
+        cc_clear_spec: cc_clear_spec {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_clear_spec";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <40>;
+            bindings
+                = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
+                , <&kp ENTER>
+                , <&macro_wait_time 500>
+                , <&kp LS(TAB)>
+                , <&macro_wait_time 150>
+                , <&kp FSLH &kp S &kp P &kp E &kp C &kp MINUS>
                 ;
         };
 
@@ -374,10 +410,18 @@
         combo_cc_edit_menu {
             timeout-ms = <160>;
             key-positions = <10 11 12 13>;
-            bindings = <&cc_clear_edit_menu>;
+            bindings = <&cc_clear_arc>;
             layers = <0>;
         };
         
+        // Claude Code: clear and type /spec-
+        combo_cc_clear_spec {
+            timeout-ms = <160>;
+            key-positions = <11 12 13 14>;
+            bindings = <&cc_clear_spec>;
+            layers = <0>;
+        };
+
         // Esc
         // combo_esc_left {
         //     timeout-ms = <100>;
