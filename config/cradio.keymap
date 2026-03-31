@@ -23,7 +23,8 @@
 #define LEDITING 8
 #define LENTER 9
 #define LBACKSPACE 10
-#define LRIGHTARROWS 11
+// #define LRIGHTARROWS 11
+#define LAIMACROS 11
 // #define LMACROS 9
 
 
@@ -306,38 +307,80 @@
                 ;
         };
 
-        // Type /clear, wait, shift+tab, then type /arc-
+        // Shared prefix: type /clear, submit, wait, shift+tab to refocus
+        cc_clear_focus: cc_clear_focus {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_clear_focus";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <40>;
+            bindings
+                = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
+                , <&kp ENTER>
+                , <&macro_wait_time 500>
+                , <&kp LS(TAB)>
+                , <&macro_wait_time 150>
+                ;
+        };
+
+        // /clear then type /arc-
         cc_clear_arc: cc_clear_arc {
             compatible = "zmk,behavior-macro";
             label = "ZM_cc_clear_arc";
             #binding-cells = <0>;
             wait-ms = <20>;
             tap-ms = <40>;
-            bindings
-                = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
-                , <&kp ENTER>
-                , <&macro_wait_time 500>
-                , <&kp LS(TAB)>
-                , <&macro_wait_time 150>
-                , <&kp FSLH &kp A &kp R &kp C &kp MINUS>
-                ;
+            bindings = <&cc_clear_focus>, <&kp FSLH &kp A &kp R &kp C &kp MINUS>;
         };
 
-        // Type /clear, wait, shift+tab, then type /spec-
+        // /clear then type /spec-
         cc_clear_spec: cc_clear_spec {
             compatible = "zmk,behavior-macro";
             label = "ZM_cc_clear_spec";
             #binding-cells = <0>;
             wait-ms = <20>;
             tap-ms = <40>;
-            bindings
-                = <&kp FSLH &kp C &kp L &kp E &kp A &kp R>
-                , <&kp ENTER>
-                , <&macro_wait_time 500>
-                , <&kp LS(TAB)>
-                , <&macro_wait_time 150>
-                , <&kp FSLH &kp S &kp P &kp E &kp C &kp MINUS>
-                ;
+            bindings = <&cc_clear_focus>, <&kp FSLH &kp S &kp P &kp E &kp C &kp MINUS>;
+        };
+
+        // /clear then type /arc-implement
+        cc_arc_implement: cc_arc_implement {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_arc_implement";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <40>;
+            bindings = <&cc_clear_focus>, <&kp FSLH &kp A &kp R &kp C &kp MINUS &kp I &kp M &kp P &kp L &kp E &kp M &kp E &kp N &kp T>;
+        };
+
+        // /clear then type /arc-verify-implementation
+        cc_arc_verify: cc_arc_verify {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_arc_verify";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <40>;
+            bindings = <&cc_clear_focus>, <&kp FSLH &kp A &kp R &kp C &kp MINUS &kp V &kp E &kp R &kp I &kp F &kp Y &kp MINUS &kp I &kp M &kp P &kp L &kp E &kp M &kp E &kp N &kp T &kp A &kp T &kp I &kp O &kp N>;
+        };
+
+        // /clear then type /arc-refine-plan
+        cc_arc_refine: cc_arc_refine {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_arc_refine";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <40>;
+            bindings = <&cc_clear_focus>, <&kp FSLH &kp A &kp R &kp C &kp MINUS &kp R &kp E &kp F &kp I &kp N &kp E &kp MINUS &kp P &kp L &kp A &kp N>;
+        };
+
+        // /clear then type /arc-resolve-plan-issues
+        cc_arc_resolve: cc_arc_resolve {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_cc_arc_resolve";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <40>;
+            bindings = <&cc_clear_focus>, <&kp FSLH &kp A &kp R &kp C &kp MINUS &kp R &kp E &kp S &kp O &kp L &kp V &kp E &kp MINUS &kp P &kp L &kp A &kp N &kp MINUS &kp I &kp S &kp S &kp U &kp E &kp S>;
         };
 
         // Enter then RGUI+COMMA (e.g., for voice input after submit)
@@ -390,12 +433,10 @@
             layers = <0 1 2 4 5 6>;
         };
         combo_semicolon_right {
-            timeout-ms = <200>;
-            // slow-release;
-            // key-positions = <6 7 8 9>;
-            key-positions = <16 17 18 19>;
+            timeout-ms = <160>;
+            key-positions = <6 7 8 9>;
             bindings = <&kp SEMICOLON>;
-            layers = <0 1 2 4 5 6>;
+            layers = <0>;
         };
 
         // Used for doc formatting in VS Code
@@ -406,11 +447,12 @@
         //     layers = <0>;
         // };
 
-        // Claude Code: toggle edit mode then open menu
-        combo_cc_edit_menu {
+        // AI macros layer (hold A+S, tap others)
+        combo_ai_macros {
             timeout-ms = <160>;
+            slow-release;
             key-positions = <10 11 12 13>;
-            bindings = <&cc_clear_arc>;
+            bindings = <&mo LAIMACROS>;
             layers = <0>;
         };
         
@@ -747,8 +789,8 @@
         //│    Esc     │  Alt+Left  │     Up     │ Alt+Right  │    Home    │   │     +      │     7      │     8      │     9      │     0      │
             &kp ESC    &kp LA(LEFT)   &kp UARW   &kp LA(RIGHT)  &kp HOME        &kp PLUS      &kp N7       &kp N8       &kp N9       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│LC+LG+COMMA │    Left    │    Down    │   Right    │ RC+RG+DOT  │   │     =      │     4      │     5      │     6      │     0      │
-         &kp LC(LG(COMMA)) &kp LEFT  &kp DARW    &kp RIGHT  &kp RC(RG(DOT)) &kp KP_EQUAL &kp N4      &kp N5       &kp N6       &kp N0
+        //│ Opt+Shf+Tab │    Left    │    Down    │   Right    │  Opt+Tab   │   │     =      │     4      │     5      │     6      │     0      │
+         &kp LA(LS(TAB))  &kp LEFT  &kp DARW    &kp RIGHT  &kp LA(TAB)    &kp KP_EQUAL &kp N4      &kp N5       &kp N6       &kp N0
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│  [ / Shft  │ ] / Shf:[] │     (      │     )      │    End     │   │     -      │     1      │     2      │     3      │  ? / Shft  │
          &mt LSHFT LBKT &shift_bracket_fix &kp LPAR  &kp RPAR     &kp END       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT QMARK
@@ -903,6 +945,24 @@
         //╰────────────┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────╯
         //                                       │            │            │   │            │            │
                                                     &trans       &trans          &trans       &trans
+        //                                       ╰────────────┴────────────╯   ╰────────────┴────────────╯
+            >;
+        };
+
+        ai_macros_layer {
+            bindings = <
+        //╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+        //│            │            │            │            │            │   │            │            │            │            │            │
+              &none        &none        &none        &none        &none          &none        &none        &none        &none        &none
+        //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
+        //│   (held)   │   (held)   │            │  /arc-     │            │   │ implement  │  verify    │  refine    │  resolve   │            │
+              &none        &none        &none    &cc_arc_implement    &none     &cc_arc_implement &cc_arc_verify &cc_arc_refine &cc_arc_resolve &none
+        //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
+        //│            │            │            │            │            │   │            │            │            │            │            │
+              &none        &none        &none        &cc_arc_verify        &none          &none        &none        &none        &none        &none
+        //╰────────────┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────╯
+        //                                       │            │            │   │            │            │
+                                                    &none        &none          &none        &none
         //                                       ╰────────────┴────────────╯   ╰────────────┴────────────╯
             >;
         };
