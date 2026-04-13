@@ -73,6 +73,7 @@
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
             hold-while-undecided;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -795,8 +796,8 @@
         //│  [ / Shft  │ ] / Shf:[] │     (      │     )      │    End     │   │     -      │     1      │     2      │     3      │  ? / Shft  │
          &mt LSHFT LBKT &shift_bracket_fix &kp LPAR  &kp RPAR     &kp END       &kp MINUS     &kp N1       &kp N2       &kp N3   &mt RSHFT QMARK
         //╰────────────┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────╯
-        //                                       │   (held)   │    Esc     │   │   Space    │   (held)   │
-                                                    &trans       &kp ESC        &kp SPACE      &trans
+        //                                       │   (held)   │   trans    │   │   Space    │   (held)   │
+                                                    &trans       &trans         &kp SPACE      &trans
         //                                       ╰────────────┴────────────╯   ╰────────────┴────────────╯
             >;
         };
@@ -804,13 +805,13 @@
         controls_layer {
             bindings = <
         //╭────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-        //│   Reset    │            │            │C+O+S+F2    │ Bright Up  │   │ Media Next │ Opt+Cmd+   │            │  BT Clear  │   Reset    │
+        //│   Reset    │            │            │ Bright Dn  │ Bright Up  │   │ Media Next │ Opt+Cmd+   │            │  BT Clear  │   Reset    │
         //│            │            │            │            │            │   │            │   PgUp     │            │            │            │
-          &sys_reset     &trans       &trans   &kp LC(LA(LS(F2))) &kp C_BRI_UP &kp C_NEXT &kp LA(LG(PG_UP)) &trans   &bt BT_CLR  &sys_reset
+          &sys_reset     &trans       &trans   &kp C_BRI_DN   &kp C_BRI_UP &kp C_NEXT &kp LA(LG(PG_UP)) &trans   &bt BT_CLR  &sys_reset
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
-        //│ Bootloader │  Out: BLE  │            │C+O+S+F1    │ Bright Dn  │   │ Media Prev │ Opt+Cmd+   │            │   Reset    │ Bootloader │
+        //│ Bootloader │  Out: BLE  │            │C+O+S+F1    │C+O+S+F2   │   │ Media Prev │ Opt+Cmd+   │            │   Reset    │ Bootloader │
         //│            │            │            │            │            │   │            │   PgDn     │            │            │            │
-          &bootloader  &out OUT_BLE   &trans   &kp LC(LA(LS(F1))) &kp C_BRI_DN &kp C_PREV &kp LA(LG(PG_DN)) &trans  &sys_reset  &bootloader
+          &bootloader  &out OUT_BLE   &trans   &kp LC(LA(LS(F1))) &kp LC(LA(LS(F2))) &kp C_PREV &kp LA(LG(PG_DN)) &trans  &sys_reset  &bootloader
         //├────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
         //│            │  Out: USB  │            │ Play/Pause │ Play/Pause │   │ Play/Pause │    BT 0    │    BT 1    │    BT 2    │    BT 3    │
               &trans   &out OUT_USB    &trans      &kp C_PP     &kp C_PP         &kp C_PP  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
